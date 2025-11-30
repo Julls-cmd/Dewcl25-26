@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Temperaturas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input,
+        button {
+            margin: 10px;
+            padding: 5px;
+        }
+
+        #resultado {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Conversor de Temperaturas</h2>
+        <div>
+            <label for="celsius">Celsius:</label>
+            <input type="number" id="celsius" placeholder="Ingresa °C">
+            <button onclick="convertirAFahrenheit()">Convertir a Fahrenheit</button>
+        </div>
+        <div>
+            <label for="fahrenheit">Fahrenheit:</label>
+            <input type="number" id="fahrenheit" placeholder="Ingresa °F">
+            <button onclick="convertirACelsius()">Convertir a Celsius</button>
+        </div>
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+
+        function convertirAFahrenheit() {
+            const celsius = parseFloat(document.getElementById("celsius").value);
+            const resultadoDiv = document.getElementById("resultado");
+
+
+            if (isNaN(celsius)) {
+                resultadoDiv.innerHTML = "Por favor, ingresa un número válido en Celsius.";
+                return;
+            }
+
+
+            const fahrenheit = (celsius * 9 / 5) + 32;
+            resultadoDiv.innerHTML = `${celsius}°C equivale a ${fahrenheit.toFixed(2)}°F`;
+        }
+
+
+        function convertirACelsius() {
+            const fahrenheit = parseFloat(document.getElementById("fahrenheit").value);
+            const resultadoDiv = document.getElementById("resultado");
+
+
+            if (isNaN(fahrenheit)) {
+                resultadoDiv.innerHTML = "Por favor, ingresa un número válido en Fahrenheit.";
+                return;
+            }
+
+
+            const celsius = (fahrenheit - 32) * 5 / 9;
+            resultadoDiv.innerHTML = `${fahrenheit}°F equivale a ${celsius.toFixed(2)}°C`;
+        }
+    </script>
+</body>
+
+</html>

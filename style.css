@@ -1,0 +1,122 @@
+:root {
+    /* Paleta de Colores Oscura Nítida */
+    --color-background: #121212; /* Fondo muy oscuro */
+    --color-surface: #1e1e1e;    /* Superficie para tarjetas */
+    --color-text-primary: #e0e0e0; /* Texto claro */
+    --color-text-secondary: #a0a0a0; /* Texto secundario/descripciones */
+    --color-accent: #00bcd4;     /* Turquesa/Cian Nítido como acento */
+    --color-shadow: rgba(0, 0, 0, 0.4);
+}
+
+/* Base y Tipografía */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Encabezado */
+.header {
+    background-color: var(--color-surface);
+    padding: 40px 20px;
+    text-align: center;
+    border-bottom: 3px solid var(--color-accent);
+}
+
+.header h1 {
+    font-size: 2.5em;
+    margin-bottom: 5px;
+    color: var(--color-accent);
+}
+
+.header p {
+    color: var(--color-text-secondary);
+    font-size: 1.1em;
+}
+
+/* Contenedor Principal */
+.content-wrapper {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Secciones de Tema */
+.theme-section {
+    margin-bottom: 60px;
+}
+
+.theme-title {
+    font-size: 1.8em;
+    color: var(--color-text-primary);
+    border-left: 5px solid var(--color-accent);
+    padding-left: 15px;
+    margin-bottom: 30px;
+}
+
+/* Grid de Ejercicios (Responsive) */
+.exercises-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+/* Tarjeta de Ejercicio */
+.exercise-card {
+    display: block;
+    background-color: var(--color-surface);
+    color: var(--color-text-primary);
+    text-decoration: none;
+    padding: 25px;
+    border-radius: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid #333; /* Borde sutil */
+}
+
+.exercise-card:hover {
+    transform: translateY(-5px); /* Efecto de elevación */
+    box-shadow: 0 8px 15px var(--color-shadow);
+    background-color: #2a2a2a; /* Ligeramente más claro al pasar el ratón */
+}
+
+.card-icon {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--color-accent);
+    display: block;
+    margin-bottom: 10px;
+}
+
+.card-title {
+    margin-top: 0;
+    font-size: 1.3em;
+    color: var(--color-text-primary);
+}
+
+.card-description {
+    color: var(--color-text-secondary);
+    font-size: 0.95em;
+}
+
+/* Pie de Página */
+.footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    border-top: 1px solid #333;
+    color: var(--color-text-secondary);
+    font-size: 0.9em;
+}
+
+.empty-placeholder {
+    grid-column: 1 / -1; /* Ocupa todo el ancho */
+    background-color: var(--color-surface);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    color: var(--color-text-secondary);
+    border: 1px dashed #333;
+}

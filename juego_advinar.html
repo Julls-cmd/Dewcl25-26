@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivinar el Número</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input {
+            padding: 5px;
+            margin: 10px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #resultado {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Adivina el Número</h1>
+        <p>Ingresa un número entre 1 y 10:</p>
+        <input type="number" id="entradaUsuario" min="1" max="10">
+        <br>
+        <button onclick="verificarAdivinanza()">Adivinar</button>
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+
+        const numeroAleatorio = Math.floor(Math.random() * 10) + 1;
+
+        function verificarAdivinanza() {
+
+            const entradaUsuario = parseInt(document.getElementById("entradaUsuario").value);
+            const resultado = document.getElementById("resultado");
+
+
+            if (isNaN(entradaUsuario) || entradaUsuario < 1 || entradaUsuario > 10) {
+                resultado.textContent = "Por favor, ingresa un número válido entre 1 y 10";
+                return;
+            }
+
+
+            if (entradaUsuario === numeroAleatorio) {
+                resultado.textContent = "¡Buen trabajo!";
+            } else {
+                resultado.textContent = "No coincide";
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>
