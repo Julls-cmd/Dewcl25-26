@@ -1,0 +1,9 @@
+<script>
+    function contarSubcadena(cadena, subcadena) {
+        if (!subcadena) return 0;
+        return cadena.split(subcadena).length - 1;
+    }
+
+    console.log(contarSubcadena("aaababaa", "aa"));
+    console.log(contarSubcadena("Hola mundo Hola", "Hola")); 
+</script>

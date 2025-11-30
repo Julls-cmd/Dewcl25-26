@@ -1,0 +1,11 @@
+<script>
+    function insert(original, aInsertar = '', pos = 1) {
+        const index = pos - 1; // Convertir a 0
+        return original.slice(0, index) + aInsertar + original.slice(index);
+    }
+
+    console.log(insert(' Estamos haciendo ejercicios.'));
+    console.log(insert(' Estamos haciendo ejercicios.', 'JavaScript'));
+    console.log(insert(' Estamos haciendo algunos ejercicios.', ' JavaScript ', 18));
+
+</script>

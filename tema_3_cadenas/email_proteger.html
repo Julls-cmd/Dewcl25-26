@@ -1,0 +1,14 @@
+<script>
+    function protege_email(email) {
+        email = email.trim();
+        const partes = email.split('@');
+        if (partes.length !== 2) return email;
+        const usuario = partes[0];
+        const dominio = partes[1];
+        const oculto = usuario.slice(0, 3) + '...';
+        return oculto + '@' + dominio;
+    }
+
+    console.log(protege_email(" Yilapruebame@example.com "));
+
+</script>

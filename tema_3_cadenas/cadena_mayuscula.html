@@ -1,0 +1,9 @@
+<script>
+    function capitalizarPalabras(cadena) {
+        return cadena.split(' ').map(palabra => {
+            return palabra.charAt(0).toUpperCase() + palabra.slice(1).toLowerCase();
+        }).join(' ');
+    }
+
+    console.log(capitalizarPalabras("probamos la funcion")); 
+</script>

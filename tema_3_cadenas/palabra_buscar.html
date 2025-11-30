@@ -1,0 +1,11 @@
+<script>
+
+    function palabra_busqueda(cadena, palabra) {
+        const regex = new RegExp(`\\b${palabra.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'gi');
+        const conteo = (cadena.match(regex) || []).length;
+        return `'${palabra}' se encontró ${conteo} veces.`;
+    }
+    console.log(palabra_busqueda('El zorro marrón', 'zorro'));
+    console.log(palabra_busqueda('aa, bb, aa', 'aa'));
+
+</script>
