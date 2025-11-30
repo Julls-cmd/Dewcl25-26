@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 13</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f0f4f8;
+            padding: 50px;
+            text-align: center;
+        }
+
+        .caja {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: auto;
+        }
+
+        input,
+        button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background: #3498db;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .res {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #27ae60;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="caja">
+        <h1>Ejercicio 13</h1>
+        <p>Crear una variable con nombre y valor que tú elijas</p>
+        <input type="text" id="nom" placeholder="Nombre de la variable">
+        <input type="text" id="val" placeholder="Valor">
+        <button onclick="crear()">Crear variable</button>
+        <div class="res" id="res"></div>
+    </div>
+    <script>
+        function crear() {
+            let nombre = document.getElementById('nom').value.trim();
+            let valor = document.getElementById('val').value;
+            if (nombre && valor) {
+                window[nombre] = valor;
+                document.getElementById('res').innerHTML = `Variable <strong>${nombre}</strong> = ${valor}<br>`;
+            } else {
+                document.getElementById('res').innerText = "Completa ambos campos";
+            }
+        }
+    </script>
+</body>
+
+</html>

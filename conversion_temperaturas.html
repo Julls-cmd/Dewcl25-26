@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 11 - Conversor de Temperatura</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f4f8;
+            padding: 50px;
+            text-align: center;
+        }
+
+        .caja {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: auto;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+
+        input,
+        button,
+        select {
+            padding: 12px;
+            margin: 10px;
+            font-size: 18px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background: #3498db;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #2980b9;
+        }
+
+        .resultado {
+            margin-top: 25px;
+            font-size: 22px;
+            font-weight: bold;
+            color: #27ae60;
+            background: #e8f5e9;
+            padding: 15px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="caja">
+        <h1>Ejercicio 11</h1>
+        <p>Conversor de temperatura: Celsius ↔ Fahrenheit</p>
+
+        <input type="number" id="temp" placeholder="Ingresa el valor" value="60">
+
+        <select id="unidad">
+            <option value="c">°C → °F (Celsius a Fahrenheit)</option>
+            <option value="f">°F → °C (Fahrenheit a Celsius)</option>
+        </select>
+
+        <br>
+        <button onclick="convertir()">Convertir</button>
+
+        <div class="resultado" id="resultado"></div>
+    </div>
+
+    <script>
+        function convertir() {
+            let valor = parseFloat(document.getElementById("temp").value);
+            let unidad = document.getElementById("unidad").value;
+            let resultado = "";
+
+            if (isNaN(valor)) {
+                resultado = "Por favor, ingresa un número válido";
+            } else if (unidad === "c") {
+                // Celsius a Fahrenheit: F = C * 9/5 + 32
+                let f = (valor * 9 / 5) + 32;
+                resultado = `${valor} °C es <strong>${f.toFixed(2)} °F</strong>`;
+            } else {
+                // Fahrenheit a Celsius: C = (F - 32) * 5/9
+                let c = (valor - 32) * 5 / 9;
+                resultado = `${valor} °F es <strong>${c.toFixed(2)} °C</strong>`;
+            }
+
+            document.getElementById("resultado").innerHTML = resultado;
+        }
+
+        // Ejemplo automático al cargar
+        window.onload = function () {
+            document.getElementById("temp").value = 60;
+            document.getElementById("unidad").value = "c";
+            convertir();
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 16</title>
+  <style>
+    body{font-family:Arial;background:#f0f4f8;padding:50px;text-align:center;}
+    .caja{background:white;padding:30px;border-radius:15px;box-shadow:0 5px 15px rgba(0,0,0,0.1);max-width:500px;margin:auto;}
+    input,button{margin:10px;padding:10px;font-size:16px;border-radius:8px;border:1px solid #ccc;}
+    button{background:#3498db;color:white;border:none;cursor:pointer;}
+    .res{margin-top:20px;font-weight:bold;color:#27ae60;}
+  </style>
+</head>
+<body>
+  <div class="caja">
+    <h1>Ejercicio 16</h1>
+    <p>Suma normal o triple si los números son iguales</p>
+    <input type="number" id="a" placeholder="Número 1" value="5">
+    <input type="number" id="b" placeholder="Número 2" value="5">
+    <button onclick="suma()">Calcular</button>
+    <div class="res" id="res"></div>
+  </div>
+  <script>
+    function suma() {
+      let a = Number(document.getElementById('a').value);
+      let b = Number(document.getElementById('b').value);
+      let resultado = (a === b) ? (a + b) * 3 : a + b;
+      document.getElementById('res').innerText = `Resultado: ${resultado}`;
+    }
+  </script>
+</body>
+</html>

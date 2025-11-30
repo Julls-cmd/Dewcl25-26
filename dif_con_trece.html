@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 15</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f0f4f8;
+            padding: 50px;
+            text-align: center;
+        }
+
+        .caja {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: auto;
+        }
+
+        input,
+        button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background: #3498db;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .res {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #27ae60;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="caja">
+        <h1>Ejercicio 15</h1>
+        <p>Diferencia con 13 (doble si es mayor)</p>
+        <input type="number" id="num" placeholder="Número" value="20">
+        <button onclick="calc()">Calcular</button>
+        <div class="res" id="res"></div>
+    </div>
+    <script>
+        function calc() {
+            let n = Number(document.getElementById('num').value);
+            let dif = Math.abs(n - 13);
+            let resultado = n > 13 ? dif * 2 : dif;
+            document.getElementById('res').innerText = `Resultado: ${resultado}`;
+        }
+    </script>
+</body>
+
+</html>
