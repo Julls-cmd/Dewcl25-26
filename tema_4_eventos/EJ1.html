@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 1</title>
+</head>
+
+<body>
+    <img id="miImagen" src="imagen1.avif" alt="Imagen 1" width="200">
+
+    <script>
+        const imagen = document.getElementById('miImagen');
+        const srcOriginal = 'imagen1.avif';
+        const srcAlterna = 'imagen2.avif';
+
+        imagen.addEventListener('mousedown', () => {
+            imagen.src = srcAlterna;
+        });
+
+        imagen.addEventListener('mouseup', () => {
+            imagen.src = srcOriginal;
+        });
+    </script>
+</body>
+
+</html>

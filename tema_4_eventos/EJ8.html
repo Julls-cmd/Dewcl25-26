@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuario desconocido</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #b0b0b0;
+        }
+
+        label,
+        input {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #f50f0f;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        p#usuarioCreado {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Crear Usuario</h1>
+    <form id="userForm">
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" id="nombre"><br><br>
+
+        <label for="edad">Edad:</label><br>
+        <input type="number" id="edad"><br><br>
+
+        <label for="pais">País:</label><br>
+        <input type="text" id="pais"><br><br>
+
+        <button type="button" onclick="crearUsuario()">Crear Usuario</button>
+    </form>
+    <p id="usuarioCreado"></p>
+
+
+    <script>
+        function crearUsuario() {
+            const nombre = document.getElementById('nombre').value || 'Desconocido';
+            const edad = document.getElementById('edad').value ? parseInt(document.getElementById('edad').value) : 0;
+            const pais = document.getElementById('pais').value || 'Desconocido';
+
+            if (isNaN(edad)) {
+                alert('La edad debe ser un número válido.');
+                return;
+            }
+
+
+            const usuarioCreado = `${nombre}, ${edad} años, ${pais}`;
+            document.getElementById('usuarioCreado').innerText = usuarioCreado;
+        }
+    </script>
+</body>
+
+</html>

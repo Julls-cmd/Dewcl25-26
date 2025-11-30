@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 5</title>
+</head>
+
+<body>
+    <a href="https://ejemplo.com/imagen1"><img src="imagen1.avif" alt="Imagen 1" width="100"></a>
+    <a href="https://ejemplo.com/imagen2"><img src="imagen2.avif" alt="Imagen 2" width="100"></a>
+
+    <script>
+        const imagenes = document.querySelectorAll('img');
+
+        imagenes.forEach((img) => {
+            img.addEventListener('mouseover', (event) => {
+                const url = event.target.src;
+                alert('URL asociada: ' + url);
+            });
+        });
+    </script>
+</body>
+
+</html>

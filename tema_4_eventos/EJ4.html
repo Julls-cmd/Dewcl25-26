@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 4</title>
+</head>
+
+<body>
+    <p>Haz click en cualquier lugar.</p>
+
+    <script>
+        document.addEventListener('mousedown', (event) => {
+            if (event.button === 0) {
+                alert('Pulsado botón izquierdo');
+            } else if (event.button === 2) {
+                alert('Pulsado botón derecho');
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5 - Permutar Array</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .ejercicio {
+            background-color: white;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .resultado {
+            font-weight: bold;
+            color: #28a745;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Ejercicio 5: Permutar Array</h1>
+    <div class="ejercicio">
+        <p>Función recursiva para generar todas las permutaciones de un array.</p>
+        <button onclick="ejecutar()">Ejecutar Ejemplo</button>
+        <div id="resultado" class="resultado"></div>
+    </div>
+    <script>
+        function permutar(arr) {
+           // Si tiene 0 o 1 elemento, solo hay una permutación
+            if (arr.length <= 1) return [arr];
+            // Fijamos el elemento i como primero
+            let perms = [];
+            for (let i = 0; i < arr.length; i++) {
+                //array con los elementos que quedan
+                let rest = arr.slice(0, i).concat(arr.slice(i + 1));
+                //Calculamos recursivamente todas las permutaciones del resto
+                let subperms = permutar(rest);
+               //A esas permutaciones le ponemos delante el elemento fijado
+                for (let sub of subperms) {
+                    perms.push([arr[i], ...sub]);
+                }
+            }
+            return perms;
+        }
+        function ejecutar() {
+            const permutaciones = permutar([1, 2, 3]);
+            document.getElementById("resultado").innerHTML = JSON.stringify(permutaciones);
+        }
+    </script>
+</body>
+
+</html>

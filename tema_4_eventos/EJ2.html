@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 2</title>
+    <style>
+        #mensaje {
+            width: 300px;
+            height: 100px;
+            background-color: white;
+            border: 1px solid black;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="mensaje">Cuadro de mensaje</div>
+
+    <script>
+        const mensaje = document.getElementById('mensaje');
+
+        document.addEventListener('mousedown', () => {
+            mensaje.style.backgroundColor = '#FFFF00';
+        });
+
+        document.addEventListener('keydown', () => {
+            mensaje.style.backgroundColor = '#CCE6FF';
+        });
+
+        document.addEventListener('mousemove', () => {
+            mensaje.style.backgroundColor = 'white';
+        });
+    </script>
+</body>
+
+</html>

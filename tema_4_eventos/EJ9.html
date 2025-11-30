@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2 - Operar con Números</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .ejercicio {
+            background-color: white;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .resultado {
+            font-weight: bold;
+            color: #28a745;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Ejercicio 2: Operar con Números</h1>
+    <div class="ejercicio">
+        <p>Función que recibe dos números y una operación (suma, resta, multiplicación, suma_mul).</p>
+        <button onclick="ejecutar()">Ejecutar Ejemplos</button>
+        <div id="resultado" class="resultado"></div>
+    </div>
+    <script>
+        function suma(a, b) { return a + b; }
+        function resta(a, b) { return a - b; }
+        function multiplicacion(a, b) { return a * b; }
+        function suma_mul(a, b) { return suma(a, b) + multiplicacion(a, b); }
+        function operar(num1, num2, operacion) {
+            return operacion(num1, num2);
+        }
+        function ejecutar() {
+            const res1 = operar(2, 3, suma);
+            const res2 = operar(2, 3, suma_mul);
+            document.getElementById("resultado").innerHTML = `operar(2,3,suma): ${res1}<br>operar(2,3,suma_mul): ${res2}`;
+        }
+    </script>
+</body>
+
+</html>

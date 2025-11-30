@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 7</title>
+    <style>
+        #caja {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            position: absolute;
+            top: 100px;
+            left: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="caja"></div>
+
+    <script>
+        const caja = document.getElementById('caja');
+        const paso = 10;
+
+        document.addEventListener('keydown', (event) => {
+            const key = event.key;
+            let top = parseInt(caja.style.top) || 100;
+            let left = parseInt(caja.style.left) || 100;
+
+            if (key === 'ArrowUp') {
+                top -= paso;
+            } else if (key === 'ArrowDown') {
+                top += paso;
+            } else if (key === 'ArrowLeft') {
+                left -= paso;
+            } else if (key === 'ArrowRight') {
+                left += paso;
+            }
+
+            // Limitar dentro de la ventana
+            top = Math.max(0, Math.min(window.innerHeight - 50, top));
+            left = Math.max(0, Math.min(window.innerWidth - 50, left));
+
+            caja.style.top = top + 'px';
+            caja.style.left = left + 'px';
+        });
+    </script>
+</body>
+
+</html>

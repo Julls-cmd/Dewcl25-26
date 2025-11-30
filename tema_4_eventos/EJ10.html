@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3 - Aplanar Array</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .ejercicio {
+            background-color: white;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .resultado {
+            font-weight: bold;
+            color: #28a745;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Ejercicio 3: Aplanar Array</h1>
+    <div class="ejercicio">
+        <p>Función recursiva para convertir un array anidado en uno plano.</p>
+        <button onclick="ejecutar()">Ejecutar Ejemplo</button>
+        <div id="resultado" class="resultado"></div>
+    </div>
+    <script>
+        function aplanar(arr) {
+            let result = [];
+            for (let item of arr) {
+                if (Array.isArray(item)) {
+                    result = result.concat(aplanar(item));
+                } else {
+                    result.push(item);
+                }
+            }
+            return result;
+        }
+        function ejecutar() {
+            const arrayPlano = aplanar([1, [2, [3, 4]], 5]);
+            document.getElementById("resultado").innerHTML = JSON.stringify(arrayPlano);
+        }
+    </script>
+</body>
+
+</html>
